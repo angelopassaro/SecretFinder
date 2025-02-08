@@ -132,3 +132,9 @@ _regex = {
 }
 
 ```
+
+
+
+## Edit
+
+- Added setup.py for pipx install
