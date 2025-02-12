@@ -1,31 +1,31 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="SecretFinder",
-    version="1.0.0",
-    author="m4ll0k",
-    author_email="m4ll0k@example.com",
-    description="Tool to discover API keys, access tokens, and sensitive data in JS files",
-    long_description=open('README.md').read(),  # Include a README.md for detailed description
+    name='SecretFinder',
+    version='1.0.0',
+    description='Tool for discovering API keys, access tokens, and sensitive data in JS files.',
+    long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url="https://github.com/m4ll0k/SecretFinder",
-    packages=find_packages(include=["SecretFinder", "SecretFinder.*"]),
-    include_package_data=True,
+    author='m4ll0k',
+    author_email='m4ll0k2@gmail.com',
+    url='https://github.com/m4ll0k/SecretFinder',
+    packages=find_packages(),
     install_requires=[
-        'jsbeautifier',
-        'requests',
-        'requests-file',
-        'lxml',
+        'requests',              # Required for HTTP requests
+        'requests-file',         # Support for reading local files with file://
+        'lxml',                  # Required for parsing HTML
+        'jsbeautifier',          # Beautifier for JS files
     ],
     entry_points={
         'console_scripts': [
-            'SecretFinder=SecretFinder:main',  # Replace with your script's main function
+            'secretfinder = SecretFinder:main',
         ],
     },
     classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.6',  # Assumes Python 3.6 or higher
+    include_package_data=True,
 )
