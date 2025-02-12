@@ -336,7 +336,7 @@ def extractjsurl(content,base_url):
         return only
     return all_src
 
-def send_request(url):
+def send_request(url,args):
     ''' Send Request '''
     # read local file
     # https://github.com/dashea/requests-file
@@ -417,7 +417,7 @@ def main():
         })
 
     if args.extract:
-        content = send_request(args.input)
+        content = send_request(args.input,args)
         urls = extractjsurl(content,args.input)
     else:
         # convert input to URLs or JS files
@@ -427,7 +427,7 @@ def main():
     for url in urls:
         print('[ + ] URL: '+url)
         if not args.burp:
-            file = send_request(url)
+            file = send_request(url, args)
         else:
             file = url.get('js')
             url = url.get('url')
