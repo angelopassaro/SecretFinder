@@ -9,7 +9,7 @@ setup(
     long_description=open('README.md').read(),  # Include a README.md for detailed description
     long_description_content_type='text/markdown',
     url="https://github.com/m4ll0k/SecretFinder",
-    packages=find_packages(),
+    packages=find_packages(include=["SecretFinder", "SecretFinder.*"]),
     include_package_data=True,
     install_requires=[
         'jsbeautifier',
