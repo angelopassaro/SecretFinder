@@ -8,7 +8,7 @@ setup(
     long_description_content_type='text/markdown',
     author='m4ll0k',
     author_email='m4ll0k2@gmail.com',
-    url='https://github.com/m4ll0k/SecretFinder',
+    url='https://github.com/angelopassaro/SecretFinder',
     packages=find_packages(),
     install_requires=[
         'requests',              # Required for HTTP requests
